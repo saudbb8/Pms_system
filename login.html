@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Portal Login - Pakenham Hospital</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <div class="icon-circle">
+        <div class="loading-spinner" id="loadingSpinner"></div>
+      </div>
+
+      <h1>Patient Portal Login</h1>
+      <p class="subtitle">Access your secure patient dashboard</p>
+
+      <div id="error-message" class="message" role="alert" aria-live="polite"></div>
+      <div id="success-message" class="message" role="alert" aria-live="polite"></div>
+
+      <form id="login-form" method="POST" action="login.php" novalidate>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            required 
+            aria-describedby="email-error"
+            autocomplete="username"
+          >
+          <div id="email-error" class="field-error" role="alert"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-container">
+            <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              required 
+              aria-describedby="password-error"
+              autocomplete="current-password"
+            >
+            <button 
+              type="button" 
+              class="password-toggle" 
+              onclick="togglePassword()"
+              aria-label="Toggle password visibility"
+            >
+              <span id="password-icon">👁️</span>
+            </button>
+          </div>
+          <div id="password-error" class="field-error" role="alert"></div>
+        </div>
+
+        <button type="submit" class="login-btn" id="login-btn">
+          Login to Dashboard
+        </button>
+
+        <a href="#" class="forgot-password" onclick="forgotPassword()">
+          Forgot your password?
+        </a>
+      </form>
+
+      <div class="divider">Don't have an account?</div>
+
+      <a href="#" class="register-link" onclick="registerNewPatient()">
+        Register as New Patient
+      </a>
+
+      <div class="demo-section">
+        <div class="demo-title">Demo Credentials:</div>
+        <div class="demo-credentials">
+          <div><strong>Email:</strong> sarah.johnson@email.com</div>
+          <div><strong>Password:</strong> demo123</div>
+        </div>
+      </div>
+
+      <div class="footer-note">
+        Your data is protected with bank-level security. By logging in, you agree to our 
+        <a href="#" onclick="showPrivacyPolicy()">privacy policy</a>.
+      </div>
+    </div>
+  </div>
+
+  <!-- Site-wide footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Pakenham Hospital</h4>
+        <p>Providing quality healthcare with compassion and care.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Patient Portal</h4>
+        <ul>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Info</h4>
+        <ul>
+          <li>123 Health St, Pakenham VIC</li>
+          <li>Email: info@pakenhamhospital.com</li>
+          <li>Phone: (03) 1234 5678</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Pakenham Hospital. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JS file linked here -->
+  <script src="login.js"></script>
+</body>
+</html>

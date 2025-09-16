@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book an Appointment - Pakenham Hospital</title>
+  <link rel="stylesheet" href="css/appointments.css" />
+</head>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <div class="brand-icon">🏥</div>
+        <div class="brand-text">
+          <h2>Pakenham Hospital</h2>
+          <p>Patient Management System</p>
+        </div>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">🏠 Home</a></li>
+        <li><a href="patient-enrolment.html" class="nav-link">👤 Patient Enrollment</a></li>
+        <li><a href="appointments.html" class="nav-link active">📅 Appointments</a></li>
+        <li><a href="tracking.html" class="nav-link">📊 Tracking</a></li>
+        <li><a href="support.html" class="nav-link">🆘 Support</a></li>
+      </ul>
+      <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="main-container">
+    <!-- Back button -->
+    <button class="back-button" onclick="goBack()">← Back to Home</button>
+
+    <!-- Appointment container -->
+    <div class="appointment-container">
+      <!-- Choose Doctor -->
+      <div class="section">
+        <h2><span class="section-icon">👨‍⚕️</span> Choose Doctor</h2>
+        <p class="section-subtitle">Select your preferred healthcare provider</p>
+        <div class="doctor-list">
+          <div class="doctor-card" data-doctor="dr-smith" data-name="Dr. Sarah Smith">
+            <div class="doctor-name">Dr. Sarah Smith</div>
+            <div class="doctor-specialty">General Practice</div>
+            <div class="doctor-status available">Available</div>
+            <div class="rating"><span>⭐</span> <span>4.9</span></div>
+          </div>
+          <div class="doctor-card" data-doctor="dr-johnson" data-name="Dr. Michael Johnson">
+            <div class="doctor-name">Dr. Michael Johnson</div>
+            <div class="doctor-specialty">Cardiology</div>
+            <div class="doctor-status available">Available</div>
+            <div class="rating"><span>⭐</span> <span>4.8</span></div>
+          </div>
+          <div class="doctor-card disabled" data-doctor="dr-brown" data-name="Dr. Emily Brown">
+            <div class="doctor-name">Dr. Emily Brown</div>
+            <div class="doctor-specialty">Pediatrics</div>
+            <div class="doctor-status busy">Busy</div>
+            <div class="rating"><span>⭐</span> <span>4.9</span></div>
+          </div>
+          <div class="doctor-card" data-doctor="dr-wilson" data-name="Dr. David Wilson">
+            <div class="doctor-name">Dr. David Wilson</div>
+            <div class="doctor-specialty">Orthopedics</div>
+            <div class="doctor-status available">Available</div>
+            <div class="rating"><span>⭐</span> <span>4.7</span></div>
+          </div>
+        </div>
+        <div class="error-message" id="doctorError"></div>
+      </div>
+
+      <!-- Select Date & Time -->
+      <div class="section calendar-container">
+        <h2><span class="section-icon">📅</span> Select Date & Time</h2>
+        <p class="section-subtitle">Choose your preferred appointment slot</p>
+
+        <div class="calendar-header">
+          <button class="nav-button" onclick="previousMonth()">❮</button>
+          <div class="month-year" id="monthYear">September 2025</div>
+          <button class="nav-button" onclick="nextMonth()">❯</button>
+        </div>
+
+        <table class="calendar" id="calendar">
+          <thead>
+            <tr>
+              <th>Su</th><th>Mo</th><th>Tu</th>
+              <th>We</th><th>Th</th><th>Fr</th><th>Sa</th>
+            </tr>
+          </thead>
+          <tbody id="calendarBody"></tbody>
+        </table>
+        <div class="error-message" id="dateError"></div>
+
+        <div class="time-slots">
+          <div class="time-slot-label">Available Times</div>
+          <div class="time-grid" id="timeGrid">
+            <div class="time-slot" data-time="09:00">9:00 AM</div>
+            <div class="time-slot" data-time="09:30">9:30 AM</div>
+            <div class="time-slot" data-time="10:00">10:00 AM</div>
+            <div class="time-slot" data-time="10:30">10:30 AM</div>
+            <div class="time-slot" data-time="11:00">11:00 AM</div>
+            <div class="time-slot" data-time="11:30">11:30 AM</div>
+            <div class="time-slot" data-time="14:00">2:00 PM</div>
+            <div class="time-slot" data-time="14:30">2:30 PM</div>
+          </div>
+          <div class="error-message" id="timeError"></div>
+        </div>
+      </div>
+
+      <!-- Appointment Details -->
+      <div class="section appointment-form">
+        <h2><span class="section-icon">📋</span> Appointment Details</h2>
+        <p class="section-subtitle">Provide additional information</p>
+
+        <form id="appointmentForm">
+          <input type="hidden" id="selectedDoctor" name="doctor" />
+          <input type="hidden" id="selectedDoctorName" name="doctor_name" />
+          <input type="hidden" id="selectedDate" name="date" />
+          <input type="hidden" id="selectedTime" name="time" />
+
+          <div class="form-group">
+            <label class="form-label" for="reasonSelect">Reason for Visit *</label>
+            <select class="form-select" id="reasonSelect" name="reason" required>
+              <option value="">Select reason</option>
+              <option value="consultation">General Consultation</option>
+              <option value="checkup">Routine Check-up</option>
+              <option value="follow-up">Follow-up Visit</option>
+              <option value="vaccination">Vaccination</option>
+              <option value="test">Medical Test</option>
+              <option value="emergency">Urgent Care</option>
+            </select>
+            <div class="error-message" id="reasonError"></div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="patientName">Full Name *</label>
+              <input type="text" class="form-input" id="patientName" name="patient_name" required />
+              <div class="error-message" id="nameError"></div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="patientPhone">Phone Number *</label>
+              <input type="tel" class="form-input" id="patientPhone" name="patient_phone" required />
+              <div class="error-message" id="phoneError"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="patientEmail">Email Address *</label>
+            <input type="email" class="form-input" id="patientEmail" name="patient_email" required />
+            <div class="error-message" id="emailError"></div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="additionalNotes">Additional Notes (Optional)</label>
+            <textarea class="form-textarea" id="additionalNotes" name="notes" placeholder="Any specific concerns or information for the doctor..."></textarea>
+          </div>
+
+          <button type="submit" class="book-button" id="bookButton">Book Appointment</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div class="modal-overlay" id="successModal">
+    <div class="success-modal">
+      <div class="success-icon">✓</div>
+      <h2 class="success-title">Appointment Booked!</h2>
+      <p class="success-subtitle">Your appointment has been successfully scheduled</p>
+
+      <div class="appointment-details" id="appointmentDetails">
+        <div class="detail-row"><span class="detail-label">Doctor:</span><span class="detail-value" id="modalDoctor"></span></div>
+        <div class="detail-row"><span class="detail-label">Date:</span><span class="detail-value" id="modalDate"></span></div>
+        <div class="detail-row"><span class="detail-label">Time:</span><span class="detail-value" id="modalTime"></span></div>
+        <div class="detail-row"><span class="detail-label">Type:</span><span class="detail-value" id="modalType"></span></div>
+        <div class="detail-row"><span class="detail-label">ID:</span><span class="detail-value" id="modalId"></span></div>
+      </div>
+
+      <div class="modal-buttons">
+        <button class="btn-primary" onclick="viewDashboard()">View in Dashboard</button>
+        <button class="btn-secondary" onclick="returnHome()">Return to Home</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/appointments.js"></script>
+</body>
+</html>

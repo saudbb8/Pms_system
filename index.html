@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pakenham Hospital - Patient Management System</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <h2>Pakenham Hospital</h2>
+                    <p>Patient Management System</p>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">
+                    <span class="nav-icon">🏠</span> Home
+                </a></li>
+                <li><a href="patient-enrolment.html" class="nav-link">
+                    <span class="nav-icon">👤</span> Patient Enrollment
+                </a></li>
+                <li><a href="appointments.html" class="nav-link">
+                    <span class="nav-icon">📅</span> Appointments
+                </a></li>
+                <li><a href="tracking.html" class="nav-link">
+                    <span class="nav-icon">📊</span> Tracking
+                </a></li>
+                <li><a href="support.html" class="nav-link">
+                    <span class="nav-icon">🆘</span> Support
+                </a></li>
+            </ul>
+            <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="hero">
+            <h1>Modernising Patient Care at <span class="highlight">Pakenham Hospital</span></h1>
+            <p class="hero-description">
+                Experience seamless healthcare management with our comprehensive patient portal.<br>
+                Register, book appointments, track your health journey, and connect with your care team.
+            </p>
+        </section>
+
+        <section class="action-cards">
+            <div class="card card-primary">
+                <div class="card-icon">👤</div>
+                <h3>Register as Patient</h3>
+                <p>Complete your patient enrollment</p>
+                <button class="btn btn-primary" onclick="window.location.href='patient-enrolment.html'">Get Started</button>
+            </div>
+            
+            <div class="card card-success">
+                <div class="card-icon">🔓</div>
+                <h3>Login to Dashboard</h3>
+                <p>Access your patient portal</p>
+                <button class="btn btn-success" onclick="window.location.href='login.html'">Get Started</button>
+            </div>
+            
+            <div class="card card-purple">
+                <div class="card-icon">📅</div>
+                <h3>Book Appointment</h3>
+                <p>Schedule with our doctors</p>
+                <button class="btn btn-purple" onclick="window.location.href='appointments.html'">Get Started</button>
+            </div>
+            
+            <div class="card card-orange">
+                <div class="card-icon">💬</div>
+                <h3>Contact Support</h3>
+                <p>Get help when you need it</p>
+                <button class="btn btn-orange" onclick="window.location.href='support.html'">Get Started</button>
+            </div>
+        </section>
+
+        <section class="why-choose">
+            <h2>Why Choose Our Patient Management System?</h2>
+            <p class="section-description">
+                Our platform is designed with your healthcare journey in mind, providing tools and features
+                that make managing your health simple and secure.
+            </p>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">⏰</div>
+                    <h3>24/7 Access</h3>
+                    <p>Access your medical information anytime, anywhere</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure & Private</h3>
+                    <p>Your health data is protected with bank-level security</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">👨‍⚕️</div>
+                    <h3>Expert Care Team</h3>
+                    <p>Connect with experienced healthcare professionals</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="emergency-contact">
+            <h2>Need Immediate Assistance?</h2>
+            <div class="contact-options">
+                <div class="contact-card emergency">
+                    <h3>Emergency</h3>
+                    <p>For life-threatening situations</p>
+                    <div class="phone-number emergency-number">000</div>
+                    <p class="contact-note">Call immediately for emergencies</p>
+                </div>
+                
+                <div class="contact-card reception">
+                    <h3>Hospital Reception</h3>
+                    <p>General inquiries and appointments</p>
+                    <div class="phone-number reception-number">(03) 5940 8000</div>
+                    <p class="contact-note">Mon-Fri: 8:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-brand">
+                    <div class="brand-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#4F8EF7" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="#4F8EF7" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="#4F8EF7" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="brand-text">
+                        <h3>Pakenham Hospital</h3>
+                        <p>Patient Management System</p>
+                    </div>
+                </div>
+                <p class="footer-description">
+                    Providing quality healthcare services to the Pakenham community with modern, 
+                    patient-centered care and advanced medical technology.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="patient-enrolment.html">Patient Enrollment</a></li>
+                    <li><a href="appointments.html">Book Appointment</a></li>
+                    <li><a href="login.html">Patient Portal</a></li>
+                    <li><a href="medical-records.html">Medical Records</a></li>
+                    <li><a href="support.html">Support Center</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="emergency.html">Emergency Care</a></li>
+                    <li><a href="general-practice.html">General Practice</a></li>
+                    <li><a href="specialist-referrals.html">Specialist Referrals</a></li>
+                    <li><a href="mental-health.html">Mental Health Services</a></li>
+                    <li><a href="career-counselling.html">Career Counselling</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <div class="contact-info">
+                    <p><strong>(03) 5940 8000</strong><br>Reception</p>
+                    <p><strong>000</strong><br>Emergency</p>
+                    <p><strong>info@pakenham.health</strong></p>
+                    <p><strong>1 Main Street<br>Pakenham VIC 3810</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-info">
+                <div class="hospital-hours">
+                    <h4>Hospital Hours</h4>
+                    <p><strong>Emergency Department:</strong> 24/7</p>
+                    <p><strong>Reception:</strong> Mon-Fri 8:00 AM - 6:00 PM</p>
+                    <p><strong>General Practice:</strong> Mon-Fri 9:00 AM - 5:00 PM</p>
+                    <p><strong>Specialist Clinics:</strong> By appointment only</p>
+                </div>
+            </div>
+            
+            <div class="footer-legal">
+                <p>&copy; 2024 Pakenham Hospital. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="accessibility.html">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
